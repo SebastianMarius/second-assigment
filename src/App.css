@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.all-app{
+  height: 100vh;
+  background-color: red;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.data-card{
+  height: 80%;
+  width: 60%;
+  background-color: aqua;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.table-head{
+  width: 100%;
+  height: 50px;
+  background-color: #f9f6f6;
+  display: flex;
+  flex-direction: row;
+  /* padding-top: 2px; */
 }
+
+.lasts-col-text,
+.firsts-col-text{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.firsts-col-text{
+  /* background-color: rgb(104, 117, 113); */
+  width: 80%;
+  height: 50px;
+
+  
+  /* padding-bottom: 0; */
+  /* vertical-align: bottom; */
+}
+
+.lasts-col-text{
+  width: 40%;
+  height: 50px;
+
+}
+
+.table-row{
+  width: 100%;
+  height: 50px;
+  background-color: #fffeff;
+  display: flex;
+  flex-direction: row;
+}
+
