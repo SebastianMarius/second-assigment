@@ -1,34 +1,47 @@
-import React from 'react'
-import { mockData } from './mockData'
-import FirstAndSecCol from './FirstAndSecCol'
-import TheLast2Col from './TheLast2Col'
+import React from 'react';
+import { mockData } from './mockData';
+import TableTemplate from './TableTemplate';
+import { useState, useEffect } from 'react';
+import ReactCountryFlag from 'react-country-flag';
 
-export default function HomePage() {
-  return (
-      <>
-        <div className="data-card">
-            <div className="table-head">
-                < FirstAndSecCol/>   
-                 <TheLast2Col/>
-               
+const callBackFct = (driverData) => {
+    // const { firstName } = driverData;
+};
+
+export default function HomePage(props) {
+    const [driverData, setDriverData] = useState();
+    const [driverTop, setDriverTop] = useState([]);
+
+    useEffect(() => {
+        setDriverData(mockData);
+        // callBackFct(driverData);
+        console.log('data' + driverData);
+    }, []);
+
+    // console.log(firstName);
+
+    return (
+        <>
+            <div className='data-card'>
+                <div className='table-head'>
+                    <div className='player-count'></div>
+                    <div className='driver-name'>Driver</div>
+                    <div className='driver-team'>Team</div>
+                    <div className='player-wins'>Number</div>
+                    <div className='player-points'>Points</div>
+                </div>
+
+                {driverData ? (
+                    <>
+                        <>
+                            <TableTemplate data={driverData} />
+                        </>
+                    </>
+                ) : (
+                    <div></div>
+                )}
             </div>
-            <div className="table-row">
-                < FirstAndSecCol/>   
-                 <TheLast2Col/>
-               
-            </div>
-
-            {/* <div className="big-row-div">
-                < FirstAndSecCol/>   
-                 <TheLast2Col/>
-               
-            </div> */}
-
-
-
-        </div>  
-        {console.log(mockData)}
-      </>
-    
-  )
+            {console.log(mockData[0])}
+        </>
+    );
 }
