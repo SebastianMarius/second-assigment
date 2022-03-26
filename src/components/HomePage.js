@@ -3,15 +3,12 @@ import { mockData } from './mockData';
 import TableTemplate from './TableTemplate';
 import { useState, useEffect } from 'react';
 
-
-
 export default function HomePage(props) {
     const [driverData, setDriverData] = useState();
-    
 
     useEffect(() => {
         setDriverData(mockData);
-    
+
         console.log('data' + driverData);
     }, []);
 
@@ -29,7 +26,6 @@ export default function HomePage(props) {
                 {driverData ? (
                     <>
                         <TableTemplate data={driverData} />
-
                     </>
                 ) : (
                     <div></div>
