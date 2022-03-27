@@ -4,13 +4,17 @@ import TableTemplate from './TableTemplate';
 import { useState, useEffect } from 'react';
 
 export default function HomePage(props) {
-    const [driverData, setDriverData] = useState();
+    const [driverData, setDriverData] = useState([]);
 
     useEffect(() => {
         setDriverData(mockData);
+        console.log(driverData);
+    }, [driverData]);
 
-        console.log('data' + driverData);
-    }, []);
+    let drivers_sorted;
+    if (driverData) {
+        drivers_sorted = drivers_points_sorted(driverData);
+    }
 
     return (
         <>
@@ -20,12 +24,18 @@ export default function HomePage(props) {
                     <div className='driver-name'>Driver</div>
                     <div className='driver-team'>Team</div>
                     <div className='player-wins'>Number</div>
-                    <div className='player-points'>Points</div>
+                    <div className='player-points'>
+                        <p>Points</p>
+                    </div>
                 </div>
 
                 {driverData ? (
                     <>
-                        <TableTemplate data={driverData} />
+                        <TableTemplate
+                            drivers_sorted={drivers_sorted}
+                            setDriverData={setDriverData}
+                            driverData={driverData}
+                        />
                     </>
                 ) : (
                     <div></div>
@@ -35,3 +45,11 @@ export default function HomePage(props) {
         </>
     );
 }
+
+const drivers_points_sorted = (drivers) => {
+    const drivers_sorted = drivers.sort((a, b) =>
+        a.points < b.points ? 1 : -1
+    );
+
+    return drivers_sorted;
+};
