@@ -2,7 +2,7 @@
     height: 100vh;
     background-color: rgb(216, 169, 169);
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
 
     background-image: url('https://images.unsplash.com/photo-1624383784228-36505c940b3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
@@ -16,6 +16,7 @@
     opacity: 0.9;
     overflow: scroll;
     border-radius: 1.5vh;
+    align-self: center;
 }
 ::-webkit-scrollbar {
     display: none;
@@ -155,4 +156,39 @@
     padding-right: 14px;
     /* margin-right: 22%; */
     /* background-color: #eeeeee; */
+}
+
+.winner_section {
+    width: 30%;
+    height: 30%;
+    background-color: #eeeeee;
+    color: #dbe4eb;
+    margin-left: 5%;
+    margin-top: 5%;
+    border-radius: 1.5vh;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.winner_card {
+    height: 90%;
+    background-color: #212529;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.driver_photo {
+    width: 40%;
+    height: 100%;
+}
+
+.second-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.winner-head {
+    color: #212529;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { mockData } from './mockData';
 import TableTemplate from './TableTemplate';
 import { useState, useEffect } from 'react';
+import WinnerCard from './WinnerCard';
 
 export default function HomePage(props) {
     const [driverData, setDriverData] = useState([]);
@@ -12,6 +13,7 @@ export default function HomePage(props) {
     }, [driverData]);
 
     let drivers_sorted;
+
     if (driverData) {
         drivers_sorted = drivers_points_sorted(driverData);
     }
@@ -29,7 +31,7 @@ export default function HomePage(props) {
                     </div>
                 </div>
 
-                {driverData ? (
+                {driverData && (
                     <>
                         <TableTemplate
                             drivers_sorted={drivers_sorted}
@@ -37,10 +39,13 @@ export default function HomePage(props) {
                             driverData={driverData}
                         />
                     </>
-                ) : (
-                    <div></div>
                 )}
             </div>
+
+            {drivers_sorted[0] && (
+                <WinnerCard drivers_sorted={drivers_sorted} />
+            )}
+
             {console.log(mockData[0])}
         </>
     );
